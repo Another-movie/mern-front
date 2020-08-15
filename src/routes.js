@@ -1,0 +1,26 @@
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { Login } from './pages/Login'
+import { Dashboard } from './pages/Dashboard'
+import { Register } from './pages/Register'
+import { EventsPage } from './pages/EventsPages'
+import { TopNav } from './components/TopNav'
+import { MyRegistrations } from './pages/MyRegistrations'
+
+
+const Routes = () => {
+    return(
+        <BrowserRouter>
+        <TopNav />
+            <Switch>
+                <Route path='/' exact component={Dashboard}/>
+                <Route path='/myregistrations' exact component={MyRegistrations} />
+                <Route path='/login' exact component={Login}/>
+
+                <Route path='/register' exact component={Register}/>
+                <Route path='/events' component={EventsPage}/>
+            </Switch>
+        </BrowserRouter>
+    )
+}
+export default Routes;

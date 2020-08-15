@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import Routes from './routes'
+import { Container} from 'reactstrap'
 import './App.css';
+import { ContextWrapper } from './user-context';
+
+// TODO  context language japan/eng 
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextWrapper>
+      <Container>
+        <h1>Anime Events</h1>
+        <div className='content'>
+          <Routes />
+        </div>
+      </Container>
+    </ContextWrapper>
   );
 }
 
